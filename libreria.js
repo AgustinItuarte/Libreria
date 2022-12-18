@@ -18,10 +18,16 @@ const RuedaDelTiempo = new Book('While of Time', 'Brandon Sanderson', 10000, 'no
 myLibrary.push(ElHobbit);
 myLibrary.push(RuedaDelTiempo);
 
-console.log(myLibrary);
-
 
 for (let i = 0; i < myLibrary.length; i++) {
     let div = document.createElement('div');
+
+    let valores = Object.values(myLibrary[i]);
+    valores.forEach(elemento => {
+        let p = document.createElement('p');
+        div.appendChild(p);
+        p.innerHTML = elemento;
+    });
+
     mostrarLibros.appendChild(div)
 }
