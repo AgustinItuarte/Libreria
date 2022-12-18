@@ -15,20 +15,48 @@ body {
 }
 
 .sidebar {
+    display: grid;
+    grid-template-rows: 20% 80%;
     padding: 20px;
     background-color: #10b981;
     height: 100vh;
-    text-align: center;
+}
+
+label, input
+{
+    display: inline-block;
+    width: 100%;
+    text-align: left;
+}
+
+.check {
+    text-align: left;
+    width: 15px;
+}
+
+.añadir-btn {
+    width: 70px;
 }
 
 .main-content {
-    padding: 20px;
     display: grid;
     grid-template-columns: auto;
-    grid-template-rows: auto;
+    grid-template-rows: 10% auto;
     grid-auto-columns: auto;
     grid-auto-rows: auto;
     background-color: #ecfdf5;
     height: 100vh;
+    padding: 20px;
     width: 100%;
+}
+
+.libros {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-auto-rows: 200px;
+    gap: 100px;
+}
+
+.libros > div {
+    border: 1px solid black;
 }

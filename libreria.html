@@ -12,25 +12,40 @@
         <div class="sidebar">
             <div>
                 <h1>Libreria</h1>
-                <button type="button">Añadir Libro</button>
+                <button type="button">AÑADIR LIBRO</button>
             </div>
 
-            <form action="" method="post" class="añadir-libro">
-                <label for="nombre">Nombre</label>
-                <input type="text" name="nombre" id="nombre">
+            <form action="" method="post" class="añadir-libro" hidden>
+                <div>
+                    <label for="nombre">Nombre</label>
+                    <input type="text" name="nombre" id="nombre">
+                </div>
 
-                <label for="autor">Autor</label>
-                <input type="text" name="autor" id="autor">
+                <div>
+                    <label for="autor">Autor</label>
+                    <input type="text" name="autor" id="autor">
+                </div>
 
-                <label for="paginas">Paginas</label>
-                <input type="number" name="paginas" id="paginas">
+                <div>
+                    <label for="paginas">Paginas</label>
+                    <input type="number" name="paginas" id="paginas">
+                </div>
 
-                <label for="leido">Leido</label>
-                <input type="checkbox" name="leido" id="leido">
+                <div>
+                    <label for="leido">Leido</label>
+                    <input type="checkbox" name="leido" id="leido" class="check">
+                </div>
+
+                <div><button class="añadir-btn">AÑADIR</button></div>
             </form>
         </div>
         <div class="main-content">
-            <h1>Coleccion</h1>
+            <div>
+                <h1>Coleccion</h1>
+            </div>
+
+            <div class="libros">
+            </div>
         </div>
     </div>
 </body>
