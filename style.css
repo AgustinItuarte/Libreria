@@ -34,8 +34,17 @@ label, input
     width: 15px;
 }
 
-.añadir-btn {
-    width: 70px;
+button {
+    background-color: #ecfdf5;
+    border: none;
+    font-weight: bold;
+    border-radius: 10px;
+    height: 40px;
+    width: 110px;
+}
+
+button:hover {
+    background-color: grey;
 }
 
 .main-content {

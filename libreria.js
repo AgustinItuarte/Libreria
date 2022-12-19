@@ -1,4 +1,6 @@
 const mostrarLibros = document.querySelector('.libros');
+const añadirLibros = document.querySelector('.añadirlibro-btn')
+const form = document.querySelector('.añadir-libro')
 
 let myLibrary = [];
 
@@ -13,8 +15,13 @@ function addBookToLibrary() {
     prompt
 }
 
+añadirLibros.addEventListener('click', () => {
+    console.log('hola')
+    form.hidden = false;
+})
+
 const ElHobbit = new Book('ElHobbit', 'Tolkien', 500, 'si');
-const RuedaDelTiempo = new Book('While of Time', 'Brandon Sanderson', 10000, 'no');
+const RuedaDelTiempo = new Book('While of Time', 'Brandon Sanderson', 1000, 'no');
 myLibrary.push(ElHobbit);
 myLibrary.push(RuedaDelTiempo);
 
@@ -31,5 +38,4 @@ for (let i = 0; i < myLibrary.length; i++) {
         div.appendChild(p);
         p.innerHTML = `${llaves[j]}: <br> ${valores[j]}`
     }
-        
 }
