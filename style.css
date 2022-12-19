@@ -58,5 +58,11 @@ label, input
 }
 
 .libros > div {
-    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+    gap: 10px;
+    border-radius: 5px;
+    padding: 20px;
 }

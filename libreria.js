@@ -3,31 +3,33 @@ const mostrarLibros = document.querySelector('.libros');
 let myLibrary = [];
 
 function Book(titulo, autor, paginas, leido) {
-    this.titulo = titulo
-    this.autor = autor
-    this.paginas = paginas
-    this.leido = leido
+    this.Titulo = titulo
+    this.Autor = autor
+    this.Paginas = paginas
+    this.Leido = leido
 }
 
 function addBookToLibrary() {
     prompt
 }
 
-const ElHobbit = new Book('elhobbit', 'tolkien', 500, 'si');
+const ElHobbit = new Book('ElHobbit', 'Tolkien', 500, 'si');
 const RuedaDelTiempo = new Book('While of Time', 'Brandon Sanderson', 10000, 'no');
 myLibrary.push(ElHobbit);
 myLibrary.push(RuedaDelTiempo);
 
-
+//Muestra libros en pantalla.
 for (let i = 0; i < myLibrary.length; i++) {
     let div = document.createElement('div');
+    mostrarLibros.appendChild(div)
 
     let valores = Object.values(myLibrary[i]);
-    valores.forEach(elemento => {
+    let llaves = Object.keys(myLibrary[i]);
+    
+    for (let j = 0; j < llaves.length; j++) {
         let p = document.createElement('p');
         div.appendChild(p);
-        p.innerHTML = elemento;
-    });
-
-    mostrarLibros.appendChild(div)
+        p.innerHTML = `${llaves[j]}: <br> ${valores[j]}`
+    }
+        
 }
