@@ -1,6 +1,7 @@
 const mostrarLibros = document.querySelector('.libros');
 const añadirLibros = document.querySelector('.añadirlibro-btn')
 const form = document.querySelector('.añadir-libro')
+const enviarForm = document.querySelector('.enviar-form')
 
 let myLibrary = [];
 
@@ -12,26 +13,25 @@ function Book(titulo, autor, paginas, leido) {
 }
 
 function addBookToLibrary() {
-    prompt
-}
+    let titulo = form.elements[0].value;
+    let autor = form.elements[1].value;
+    let cantPag = form.elements[2].value;
+    let leido = form.elements[3].value;
+    
+    libro = new Book(titulo, autor, cantPag, leido)
+    myLibrary.push(libro);
 
-añadirLibros.addEventListener('click', () => {
-    console.log('hola')
-    form.hidden = false;
-})
+    console.log(myLibrary);
 
-const ElHobbit = new Book('ElHobbit', 'Tolkien', 500, 'si');
-const RuedaDelTiempo = new Book('While of Time', 'Brandon Sanderson', 1000, 'no');
-myLibrary.push(ElHobbit);
-myLibrary.push(RuedaDelTiempo);
+    //Muestra libros en pantalla.
 
-//Muestra libros en pantalla.
-for (let i = 0; i < myLibrary.length; i++) {
+    let ultimoElem = myLibrary.length - 1
+
     let div = document.createElement('div');
     mostrarLibros.appendChild(div)
 
-    let valores = Object.values(myLibrary[i]);
-    let llaves = Object.keys(myLibrary[i]);
+    let valores = Object.values(myLibrary[ultimoElem]);
+    let llaves = Object.keys(myLibrary[ultimoElem]);
     
     for (let j = 0; j < llaves.length; j++) {
         let p = document.createElement('p');
@@ -39,3 +39,13 @@ for (let i = 0; i < myLibrary.length; i++) {
         p.innerHTML = `${llaves[j]}: <br> ${valores[j]}`
     }
 }
+
+//Muestra form para añadir libros.
+añadirLibros.addEventListener('click', () => {
+    form.hidden = false;
+})
+
+enviarForm.addEventListener('click', function(e) {
+    e.preventDefault();
+    addBookToLibrary();
+})
