@@ -13,7 +13,8 @@ function Book(titulo, autor, paginas, leido, nº) {
     this.LibroNº = nº;
 }
 
-function addBookToLibrary() {
+//Añade los libros al array myLibrary y los muesta en pantall
+function añadiraLibreria() {
     let ultimoElem2 = myLibrary.length - 1
     let titulo = form.elements[0].value;
     let autor = form.elements[1].value;
@@ -22,9 +23,11 @@ function addBookToLibrary() {
     
     libro = new Book(titulo, autor, cantPag, leido, ultimoElem2 + 1)
     myLibrary.push(libro);
+    crearLibros()
+}
 
-    //Muestra libros en pantalla.
-    
+//Crea los libros en el DOM
+function crearLibros() {
     let ultimoElem = myLibrary.length - 1
     let btnEliminar = document.createElement('button');
     btnEliminar.className = 'btn-eliminar'
@@ -45,16 +48,18 @@ function addBookToLibrary() {
     }
 }
 
-function eliminarLibro(libro) {
-    const btn = document.querySelector('.btn-eliminar');
-    libro.id
+//Funcion que elimina libros
+function eliminarLibro(evento) {
+    const elemento = evento.target;
+    if (elemento.classList.contains('btn-eliminar')) {
+        let id = elemento.dataset.id;
+        const div = document.querySelector(`div[data-id='${id}']`);
+        div.remove();
+    }
 }
 
-if (btnEliminar) {
-    btnEliminar.addEventListener('click', () => {
-        console.log('hola')
-    })
-}
+//Evento que llama a funcion para eliminar libros
+document.addEventListener('click', eliminarLibro );
     
 //Muestra form para añadir libros.
 añadirLibros.addEventListener('click', () => {
@@ -65,5 +70,5 @@ añadirLibros.addEventListener('click', () => {
 //Boton para añadir libros a la coleccion
 enviarForm.addEventListener('click', function(e) {
     e.preventDefault();
-    addBookToLibrary();
+    añadiraLibreria();
 })
