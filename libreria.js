@@ -18,7 +18,7 @@ function addBookToLibrary() {
     let cantPag = form.elements[2].value;
     let leido = form.elements[3].value;
     
-    libro = new Book(titulo, autor, cantPag, leido)
+    libro = new Book(titulo, autor, cantPag, leido,)
     myLibrary.push(libro);
 
     console.log(myLibrary);
@@ -26,9 +26,11 @@ function addBookToLibrary() {
     //Muestra libros en pantalla.
 
     let ultimoElem = myLibrary.length - 1
-
+    let btnEliminar = document.createElement('button');
     let div = document.createElement('div');
-    mostrarLibros.appendChild(div)
+    mostrarLibros.appendChild(div);
+    div.appendChild(btnEliminar);
+    btnEliminar.innerHTML = 'ELIMINAR'
 
     let valores = Object.values(myLibrary[ultimoElem]);
     let llaves = Object.keys(myLibrary[ultimoElem]);
@@ -45,6 +47,8 @@ añadirLibros.addEventListener('click', () => {
     form.hidden = false;
 })
 
+
+//Boton para añadir libros a la coleccion
 enviarForm.addEventListener('click', function(e) {
     e.preventDefault();
     addBookToLibrary();
