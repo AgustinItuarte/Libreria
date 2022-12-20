@@ -13,7 +13,7 @@ function Book(titulo, autor, paginas, leido, nº) {
     this.LibroNº = nº;
 }
 
-//Añade los libros al array myLibrary y los muesta en pantall
+//Añade los libros al array myLibrary y los muesta en pantalla
 function añadiraLibreria() {
     let check = document.querySelector('.check')
     let ultimoElem2 = myLibrary.length - 1
@@ -21,12 +21,13 @@ function añadiraLibreria() {
     let autor = form.elements[1].value;
     let cantPag = form.elements[2].value;
     let leido = ''
+
     if (check.checked === true) {
         leido = 'Si';
     } else {
         leido = 'No';
     }
-    console.log(check.checked)
+
     libro = new Book(titulo, autor, cantPag, leido, ultimoElem2 + 1)
     myLibrary.push(libro);
     crearLibros()
@@ -38,11 +39,15 @@ function crearLibros() {
     let btnEliminar = document.createElement('button');
     btnEliminar.className = 'btn-eliminar'
     btnEliminar.dataset.id = `${ultimoElem}`;
+    let btnCheck = document.createElement('button');
+    btnCheck.className = 'btn-check';
     let div = document.createElement('div');
     div.dataset.id = `${ultimoElem}`;
     mostrarLibros.appendChild(div);
     div.appendChild(btnEliminar);
+    div.appendChild(btnCheck);
     btnEliminar.innerHTML = 'ELIMINAR'
+    btnCheck.innerHTML = 'LEIDO'
 
     let valores = Object.values(myLibrary[ultimoElem]);
     let llaves = Object.keys(myLibrary[ultimoElem]);
