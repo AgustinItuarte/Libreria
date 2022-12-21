@@ -13,15 +13,13 @@ function Book(titulo, autor, paginas, leido, nº) {
     this.Leido = leido
     this.LibroNº = nº;
     this.estado = function() {
-        /* if (check.checked === true) {
-            return this.Leido = 'Si';
-        } */
 
         if (this.Leido === 'No') {
             return this.Leido = 'Si';
         } else if (this.Leido === 'Si'){
             return this.Leido = 'No';
         }
+
     }
 }
 
@@ -33,17 +31,17 @@ function añadiraLibreria() {
     let autor = form.elements[1].value;
     let cantPag = form.elements[2].value;
     let leido = form.elements[3].value;
-    /* leido = ''
+    leido = ''
 
     if (check.checked === true) {
         leido = 'Si';
     } else {
         leido = 'No';
     }
- */
-    libro = new Book(titulo, autor, cantPag, leido, ultimoElem2 + 1)
+
+    libro = new Book(titulo, autor, cantPag, leido, ultimoElem2 + 1);
     myLibrary.push(libro);
-    crearLibros()
+    crearLibros();
 }
 
 //Crea los libros en el DOM
@@ -110,6 +108,7 @@ function cambiarEstado(evento1) {
             div.appendChild(p);
             p.innerHTML = `${llaves[j]}: <br> ${valores[j]}`
         }
+            console.log(myLibrary[id])
     }
 }
 
