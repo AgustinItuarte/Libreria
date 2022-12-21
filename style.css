@@ -6,7 +6,7 @@
 
 body {
     height: 100vh;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .container {
@@ -15,11 +15,51 @@ body {
 }
 
 .sidebar {
+    position: relative;
     display: grid;
+    gap: 40px;
     grid-template-rows: 20% 80%;
     padding: 20px;
     background-color: #10b981;
     height: 100vh;
+    box-shadow: 1px 1px 5px black;
+}
+
+h1 {
+    font-size: 3vw;
+}
+
+img {
+    vertical-align:middle;
+    height: 3vw;
+    width: 3vw;
+}
+
+.sidebar-titulo {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+input {
+    border: none;
+    border-radius: 3px;
+    height: 20px;
+}
+
+input:hover, input:focus {
+    outline: none;
+    border: 2px solid #064e3b;
+}
+
+label {
+    font-size: 1.4rem;
 }
 
 label, input
@@ -38,22 +78,30 @@ button {
     background-color: #ecfdf5;
     border: none;
     font-weight: bold;
+    border: 2px solid #064e3b;
+    font-size: 1vw;
     border-radius: 10px;
     height: 40px;
-    width: 110px;
+    width: 8vw;
 }
 
 button:hover {
     background-color: grey;
+    cursor: pointer;
+}
+
+button:active {
+    background-color: rgb(170, 162, 162);
 }
 
 .main-content {
     display: grid;
     grid-template-columns: auto;
-    grid-template-rows: 10% auto;
+    grid-template-rows:auto;
     grid-auto-columns: auto;
     grid-auto-rows: auto;
-    background-color: #ecfdf5;
+    background-image: url(img/fondo.jpg);
+    background-size: cover;
     height: 100vh;
     padding: 20px;
     width: 100%;
@@ -62,21 +110,45 @@ button:hover {
 .libros {
     display: grid;
     overflow: auto;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 25%));
-    grid-auto-rows: 300px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 27%));
+    grid-auto-rows: 350px;
     gap: 100px;
 }
 
 .libros > div {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     background-color: white;
+    border: 10px solid #064e3b;
+    box-shadow: 1px 1px 5px black;
     gap: 10px;
     border-radius: 5px;
-    padding: 20px;
 }
 
-.btn-eliminar {
+.libros > div:hover {
+    box-shadow: 4px 4px 5px black;
+}
 
+.btn-eliminar:hover {
+    background-color: rgb(206, 59, 59);
+}
+.btn-eliminar:active {
+    background-color: red;
+}
+
+.div-botones {
+    position: relative;
+    box-shadow: 0px 1px 5px gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #10b981;
+    height: 40%;
+    gap: 10px;
+}
+
+.añadir-libro {
+    height: 500px;
 }

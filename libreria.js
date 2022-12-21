@@ -54,10 +54,13 @@ function crearLibros() {
     btnCheck.className = 'btn-check';
     btnCheck.dataset.id = `${ultimoElem}`;
     let div = document.createElement('div');
+    let divbtn = document.createElement('div');
+    divbtn.className = 'div-botones'
     div.dataset.id = `${ultimoElem}`;
     mostrarLibros.appendChild(div);
-    div.appendChild(btnEliminar);
-    div.appendChild(btnCheck);
+    div.appendChild(divbtn)
+    divbtn.appendChild(btnEliminar);
+    divbtn.appendChild(btnCheck);
     btnEliminar.innerHTML = 'ELIMINAR'
     btnCheck.innerHTML = 'LEIDO'
 
@@ -68,7 +71,7 @@ function crearLibros() {
         let p = document.createElement('p');
         p.className = `p${ultimoElem}`;
         div.appendChild(p);
-        p.innerHTML = `${llaves[j]}: <br> ${valores[j]}`
+        p.innerHTML = `<strong>${llaves[j]}:</strong> <br> ${valores[j]}`
     }
 
     const ultimoP = div.lastElementChild;
@@ -109,7 +112,7 @@ function cambiarEstado(evento1) {
             let p = document.createElement('p');
             p.className = `p${id}`;
             div.appendChild(p);
-            p.innerHTML = `${llaves[j]}: <br> ${valores[j]}`
+            p.innerHTML = `<strong>${llaves[j]}:</strong> <br> ${valores[j]}`
         }
 
         const ultimoP = div.lastElementChild;
