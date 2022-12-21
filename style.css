@@ -22,7 +22,7 @@ body {
     padding: 20px;
     background-color: #10b981;
     height: 100vh;
-    box-shadow: 1px 1px 5px black;
+    box-shadow: 1px 1px 8px black inset;
 }
 
 h1 {
@@ -51,6 +51,7 @@ input {
     border: none;
     border-radius: 3px;
     height: 20px;
+    box-shadow: 2px 2px 5px gray;
 }
 
 input:hover, input:focus {
