@@ -70,6 +70,9 @@ function crearLibros() {
         div.appendChild(p);
         p.innerHTML = `${llaves[j]}: <br> ${valores[j]}`
     }
+
+    const ultimoP = div.lastElementChild;
+    ultimoP.remove();
 }
 
 //Funcion que elimina libros
@@ -108,7 +111,9 @@ function cambiarEstado(evento1) {
             div.appendChild(p);
             p.innerHTML = `${llaves[j]}: <br> ${valores[j]}`
         }
-            console.log(myLibrary[id])
+
+        const ultimoP = div.lastElementChild;
+        ultimoP.remove();
     }
 }
 
