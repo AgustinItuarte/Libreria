@@ -6,13 +6,16 @@ const check = document.querySelector('.check');
 
 let myLibrary = [];
 
-function Book(titulo, autor, paginas, leido, nº) {
-    this.Titulo = titulo
-    this.Autor = autor
-    this.Paginas = paginas
-    this.Leido = leido
-    this.LibroNº = nº;
-    this.estado = function() {
+class Book {
+    constructor(titulo, autor, paginas, leido, nº) {
+        this.Titulo = titulo;
+        this.Autor = autor;
+        this.Paginas = paginas;
+        this.Leido = leido;
+        this.LibroNº = nº;
+    }
+    
+    estado() {
 
         if (this.Leido === 'No') {
             return this.Leido = 'Si';
@@ -21,6 +24,7 @@ function Book(titulo, autor, paginas, leido, nº) {
         }
 
     }
+
 }
 
 //Añade los libros al array myLibrary y los muestra en pantalla
@@ -66,7 +70,7 @@ function crearLibros() {
 
     let valores = Object.values(myLibrary[ultimoElem]);
     let llaves = Object.keys(myLibrary[ultimoElem]);
-    
+    // If valores es igual a tal atributo no crea el libro el valor se asigna en el set
     for (let j = 0; j < llaves.length; j++) {
         let p = document.createElement('p');
         p.className = `p${ultimoElem}`;

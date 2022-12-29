@@ -26,7 +26,7 @@ body {
 }
 
 h1 {
-    font-size: 3vw;
+    font-size: 2.5vw;
 }
 
 img {
@@ -120,7 +120,7 @@ button:active {
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
     background-color: white;
     border: 10px solid #064e3b;
     box-shadow: 1px 1px 5px black;
