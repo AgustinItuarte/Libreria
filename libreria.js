@@ -1,6 +1,9 @@
 const mostrarLibros = document.querySelector('.libros');
 const añadirLibros = document.querySelector('.añadirlibro-btn');
 const form = document.querySelector('.añadir-libro');
+const form_nombre = document.querySelector('#nombre');
+const form_autor = document.querySelector('#autor');
+const form_paginas = document.querySelector('#paginas');
 const enviarForm = document.querySelector('.enviar-form');
 const check = document.querySelector('.check');
 
@@ -36,6 +39,11 @@ function añadiraLibreria() {
     let cantPag = form.elements[2].value;
     let leido = form.elements[3].value;
     leido = ''
+
+     form.elements[0].value = '';
+     form.elements[1].value = '';
+     form.elements[2].value = '';
+     form.elements[3].value = '';
 
     if (check.checked === true) {
         leido = 'Si';
@@ -135,9 +143,50 @@ añadirLibros.addEventListener('click', () => {
     form.hidden = false;
 })
 
+// Funcion para chequear si un campo es valido
 
-//Boton para añadir libros a la coleccion
-enviarForm.addEventListener('click', function(e) {
-    e.preventDefault();
-    añadiraLibreria();
+function checkValue() {
+
+    let error_titulo = document.querySelector('.error-nombre')
+    let error_autor = document.querySelector('.error-autor')
+    let error_paginas = document.querySelector('.error-paginas')
+
+    if (form_nombre.validity.valueMissing) {
+        error_titulo.textContent = 'El campo esta vacio!'
+    } else {
+        error_titulo.textContent = ''
+    }
+    
+    if (form_autor.validity.valueMissing) {
+        error_autor.textContent = 'El campo esta vacio!'
+    } else {
+        error_autor.textContent = ''
+    }
+    
+    if (form_paginas.validity.valueMissing) {
+        error_paginas.textContent = 'El campo esta vacio!'
+    } else {
+        error_paginas.textContent = ''
+    }
+    
+}
+
+// Funcion para enviar el form en caso de ser validos los campos.
+
+form.addEventListener('submit', (event) => {
+    
+    if (!form_nombre.validity.valid || !form_autor.validity.valid || !form_paginas.validity.valid) {
+
+        checkValue();
+
+        event.preventDefault();
+
+    } else {
+        
+        checkValue();
+        añadiraLibreria();
+        event.preventDefault();
+
+    }
+
 })

@@ -15,19 +15,22 @@
                 <button type="button" class="añadirlibro-btn">AÑADIR LIBRO</button>
             </div>
 
-            <form action="" method="post" class="añadir-libro" hidden>
+            <form novalidate action="" method="post" class="añadir-libro" hidden>
                 <div class="form-container">
                     <div>
-                        <label for="nombre">Nombre</label>
-                        <input type="text" name="nombre" id="nombre">
+                        <label for="nombre">Nombre *</label>
+                        <input type="text" name="nombre" id="nombre" required>
+                        <span class="error-nombre"></span>
                     </div>
                     <div>
-                        <label for="autor">Autor</label>
-                        <input type="text" name="autor" id="autor">
+                        <label for="autor">Autor *</label>
+                        <input type="text" name="autor" id="autor" required>
+                        <span class="error-autor"></span>
                     </div>
                     <div>
-                        <label for="paginas">Paginas</label>
-                        <input type="number" name="paginas" id="paginas">
+                        <label for="paginas">Paginas *</label>
+                        <input type="number" name="paginas" id="paginas" required>
+                        <span class="error-paginas"></span>
                     </div>
                     <div>
                         <label for="leido">Leido</label>
